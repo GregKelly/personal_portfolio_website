@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div class="page">
       <header class="site-header">
         <div class="brand">G. Kelly</div>
@@ -24,7 +25,7 @@
         <a class="cta" href="#contact">Let's Talk</a>
       </header>
 
-      <main>
+      <main id="main">
         <section class="hero">
           <div class="hero-content">
             <p class="eyebrow">Product-minded developer</p>
@@ -141,7 +142,7 @@
                 <span>Landing page</span>
                 <span>Animation</span>
               </div>
-              <a href="#contact">Case study</a>
+              <a href="#contact">View Studio landing case study</a>
             </article>
 
             <article class="project-card reveal" data-category="data">
@@ -154,7 +155,7 @@
                 <span>Data viz</span>
                 <span>Filters</span>
               </div>
-              <a href="#contact">Case study</a>
+              <a href="#contact">View Pulse analytics case study</a>
             </article>
 
             <article class="project-card reveal" data-category="branding">
@@ -167,7 +168,7 @@
                 <span>Identity</span>
                 <span>Style guide</span>
               </div>
-              <a href="#contact">Case study</a>
+              <a href="#contact">View Northwind rebrand case study</a>
             </article>
 
             <article class="project-card reveal" data-category="ui">
@@ -180,7 +181,7 @@
                 <span>Accessibility</span>
                 <span>Wayfinding</span>
               </div>
-              <a href="#contact">Case study</a>
+              <a href="#contact">View Campus guide case study</a>
             </article>
           </div>
         </section>
@@ -188,7 +189,7 @@
         <section id="contact" class="contact reveal">
           <div class="section-title">
             <p class="eyebrow">Contact</p>
-            <h2>Ready to build something together?</h2>
+            <h2 id="contact-form-heading">Ready to build something together?</h2>
           </div>
           <div class="contact-card">
             <div>
@@ -207,14 +208,22 @@
                 </div>
               </div>
             </div>
-            <form id="contact-form">
-              <label>
+            <form id="contact-form" aria-labelledby="contact-form-heading">
+              <label for="contact-name">
                 Name
-                <input type="text" name="name" placeholder="Your name" required />
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
               </label>
-              <label>
+              <label for="contact-message">
                 Message
                 <textarea
+                  id="contact-message"
                   name="message"
                   rows="4"
                   placeholder="Tell me about your project"
